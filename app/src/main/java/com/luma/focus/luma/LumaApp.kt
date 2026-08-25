@@ -14,13 +14,13 @@ import androidx.compose.ui.platform.LocalConfiguration
 import com.luma.focus.theme.LumaTheme
 import com.luma.focus.ui.navigation.LumaAdaptiveNavigation
 import com.luma.focus.ui.screens.AIScreen
-import com.luma.focus.ui.screens.ClockScreen
-import com.luma.focus.ui.screens.FocusScreen
-import com.luma.focus.ui.screens.HabitsScreen
+import com.luma.focus.ui.screens.ClockScreenV2
+import com.luma.focus.ui.screens.FocusScreenV2
+import com.luma.focus.ui.screens.HabitsScreenV2
 import com.luma.focus.ui.screens.HomeScreen
-import com.luma.focus.ui.screens.RoomScreen
+import com.luma.focus.ui.screens.RoomScreenV2
 import com.luma.focus.ui.screens.SettingsScreen
-import com.luma.focus.ui.screens.TasksScreen
+import com.luma.focus.ui.screens.TasksScreenV2
 
 @Composable
 fun LumaApp() {
@@ -41,11 +41,11 @@ fun LumaApp() {
             ) { innerPadding ->
                 when (currentDestination) {
                     "home" -> HomeScreen(innerPadding)
-                    "focus" -> FocusScreen(innerPadding)
-                    "tasks" -> TasksScreen(innerPadding)
-                    "habits" -> HabitsScreen(innerPadding)
-                    "room" -> RoomScreen(innerPadding)
-                    "clock" -> ClockScreen(innerPadding)
+                    "focus" -> FocusScreenV2(innerPadding)
+                    "tasks" -> TasksScreenV2(innerPadding)
+                    "habits" -> HabitsScreenV2(innerPadding)
+                    "room" -> RoomScreenV2(innerPadding)
+                    "clock" -> ClockScreenV2(innerPadding)
                     "ai" -> AIScreen(innerPadding)
                     "settings" -> SettingsScreen(innerPadding)
                     else -> HomeScreen(innerPadding)
