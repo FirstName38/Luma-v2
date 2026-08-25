@@ -2,7 +2,6 @@ package com.luma.focus.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
-from java.time.LocalDateTime
 
 @Parcelize
 data class FocusSession(
@@ -10,9 +9,9 @@ data class FocusSession(
     val date: String = "",
     val startTime: String = "",
     val endTime: String = "",
-    val plannedDuration: Long = 0,  // seconds
-    val actualFocusDuration: Long = 0,  // seconds
-    val totalPauseDuration: Long = 0,  // seconds
+    val plannedDuration: Long = 0,
+    val actualFocusDuration: Long = 0,
+    val totalPauseDuration: Long = 0,
     val pauseCount: Int = 0,
     val sessionCount: Int = 0,
     val mode: PomodoroMode = PomodoroMode.STANDARD,

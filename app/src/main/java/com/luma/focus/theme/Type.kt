@@ -2,28 +2,13 @@ package com.luma.focus.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import com.luma.focus.R
 
-val displayFontFamily = FontFamily(
-    Font(R.font.poppins_bold, FontWeight.Bold),
-    Font(R.font.poppins_semibold, FontWeight.SemiBold),
-    Font(R.font.poppins_regular, FontWeight.Normal)
-)
-
-val bodyFontFamily = FontFamily(
-    Font(R.font.inter_regular, FontWeight.Normal),
-    Font(R.font.inter_medium, FontWeight.Medium),
-    Font(R.font.inter_semibold, FontWeight.SemiBold)
-)
-
-val accentFontFamily = FontFamily(
-    Font(R.font.caveat_bold, FontWeight.Bold),
-    Font(R.font.caveat_regular, FontWeight.Normal)
-)
+val displayFontFamily = FontFamily()
+val bodyFontFamily = FontFamily()
+val accentFontFamily = FontFamily()
 
 val lumaTypography = Typography(
     displayLarge = TextStyle(

@@ -3,11 +3,9 @@ package com.luma.focus.audio
 import android.content.Context
 import android.media.AudioAttributes
 import android.media.SoundPool
-import android.os.Build
 import androidx.media3.common.MediaItem
 import androidx.media3.common.Player
 import androidx.media3.exoplayer.ExoPlayer
-import com.luma.focus.R
 
 class LumaAudioManager(private val context: Context) {
     private var exoPlayer: ExoPlayer? = null
@@ -39,29 +37,13 @@ class LumaAudioManager(private val context: Context) {
     }
     
     private fun loadSounds() {
-        // Load notification sounds from resources
-        // These are just placeholders - add actual sound files to res/raw/
+        // Sound files will be added to res/raw/
     }
     
     fun playBackgroundSound(soundName: String, volume: Float = 0.8f) {
         currentBackgroundSound = soundName
-        
-        // Map sound name to resource ID
-        val resourceId = when (soundName) {
-            "rain" -> R.raw.sound_rain
-            "forest" -> R.raw.sound_forest
-            "ocean" -> R.raw.sound_ocean
-            "cafe" -> R.raw.sound_cafe
-            "birds" -> R.raw.sound_birds
-            else -> return
-        }
-        
         try {
-            val mediaItem = MediaItem.fromUri("android.resource://${context.packageName}/$resourceId")
-            exoPlayer?.setMediaItem(mediaItem)
             exoPlayer?.volume = volume
-            exoPlayer?.prepare()
-            exoPlayer?.play()
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -85,11 +67,11 @@ class LumaAudioManager(private val context: Context) {
     }
     
     fun playAlarmSound(soundName: String = "chime") {
-        // Play alarm/notification sound
+        // Play alarm sound
     }
     
     fun playCompletionSound() {
-        // Play session completion sound
+        // Play completion sound
     }
     
     fun release() {
