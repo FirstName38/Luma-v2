@@ -1,0 +1,4 @@
+-keep class com.luma.focus.** { *; }
+-keep class androidx.** { *; }
+-keepattributes SourceFile,LineNumberTable
+-renamesourcefileattribute SourceFile
