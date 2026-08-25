@@ -22,6 +22,7 @@
         android:required="false" />
 
     <application
+        android:name=".LumaApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:debuggable="true"
@@ -35,7 +36,7 @@
         tools:targetApi="33">
 
         <activity
-            android:name="com.luma.focus.MainActivity"
+            android:name=".MainActivity"
             android:configChanges="orientation|screenSize"
             android:exported="true"
             android:theme="@style/Theme.Luma">
