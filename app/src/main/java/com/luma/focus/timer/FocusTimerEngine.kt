@@ -1,15 +1,16 @@
 package com.luma.focus.timer
 
 import com.luma.focus.model.FocusConfiguration
-import com.luma.focus.model.FocusSession
 import com.luma.focus.model.PomodoroMode
 import com.luma.focus.model.TimerPhase
 import com.luma.focus.model.TimerState
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
 
 class FocusTimerEngine {
     private val _timerState = MutableStateFlow(TimerState.IDLE)
@@ -76,7 +77,7 @@ class FocusTimerEngine {
     
     private fun startTimer() {
         timerJob?.cancel()
-        timerJob = kotlinx.coroutines.GlobalScope.launch {
+        timerJob = GlobalScope.launch {
             while (_timerState.value == TimerState.RUNNING && _timeRemaining.value > 0) {
                 delay(1000)
                 _timeRemaining.value = (_timeRemaining.value - 1).coerceAtLeast(0)
